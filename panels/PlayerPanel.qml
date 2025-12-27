@@ -1,4 +1,4 @@
-import QtQuick 6.10.1
+import QtQuick
 
 Rectangle {
     id: playerPanel

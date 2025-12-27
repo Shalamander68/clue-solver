@@ -1,4 +1,4 @@
-import QtQuick 6.10.1
+import QtQuick
 import "panels"
 
 Window {
@@ -8,7 +8,7 @@ Window {
     visible: true
     title: qsTr("Clue Solver")
   
-// 3 section layout
+// 3 panel layout
     Row {
         id: rows
         anchors.fill: parent
