@@ -50,8 +50,8 @@ Rectangle {
 
         background: Rectangle {
             radius: 6
-            color: '#004422'
-            border.color: "white"
+            color: '#2a2a2a'
+            border.color: '#1ce6b3'
             border.width: 2
         }
     }
@@ -80,8 +80,8 @@ Rectangle {
 
         background: Rectangle {
             radius: 6
-            color: '#36413b'
-            border.color: "white"
+            color: '#2a2a2a'
+            border.color: '#1ce6b3'
             border.width: 2
         }
     }
