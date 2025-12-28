@@ -221,36 +221,6 @@ Rectangle {
         anchors.leftMargin: 12
         anchors.bottomMargin: 12
 
-        property var allItems: ({
-            "Suspect": [
-                { key: "white",  label: "Mrs. White" },
-                { key: "red",    label: "Miss Scarlet" },
-                { key: "green",  label: "Mr. Green" },
-                { key: "yellow", label: "Colonel Mustard" },
-                { key: "blue",   label: "Mrs. Peacock" },
-                { key: "purple", label: "Mr. Plum" }
-            ],
-            "Weapon": [
-                { key: "knife",      label: "Knife" },
-                { key: "candlestick",label: "Candlestick" },
-                { key: "revolver",   label: "Revolver" },
-                { key: "rope",       label: "Rope" },
-                { key: "leadpipe",   label: "Lead Pipe" },
-                { key: "wrench",     label: "Wrench" }
-            ],
-            "Room": [
-                { key: "kitchen",      label: "Kitchen" },
-                { key: "ballroom",     label: "Ballroom" },
-                { key: "conservatory", label: "Conservatory" },
-                { key: "dining",       label: "Dining Room" },
-                { key: "library",      label: "Library" },
-                { key: "study",        label: "Study" }
-            ],
-            "All" : [
-
-            ]
-        })
-
         Text {
             id: direct_input_text
             text: "Direct Input"
@@ -301,55 +271,69 @@ Rectangle {
             }
         }
 
-        Text {
-            id: sentance2_text
-            text: "of type"
-            font.pixelSize: 15
-            anchors.top: sentance1_text.top
-            anchors.left: status_dropdown.right
-            anchors.leftMargin: 6
-            color: 'white'
-        }
-
-        ComboBox {
-            id: type_dropdown
-            width: 75
-            anchors.left: sentance2_text.right
-            anchors.top: player_dropdown.top
-            anchors.leftMargin: 6
-
-            model: ["All", "Suspect", "Weapon", "Room"]
-
-            onActivated: {
-                results_dropdown.model = allItems[currentText]
-                results_dropdown.currentIndex = -1   // clear selection
-            }
-        }
-
-        Text {
-            id: sentance3_text
-            text: "card is"
-            font.pixelSize: 15
-            anchors.top: sentance1_text.top
-            anchors.left: type_dropdown.right
-            anchors.leftMargin: 6
-            color: 'white'
-        }
-
         ComboBox {
             id: has_results_dropdown
             width: 200
-            anchors.left: sentance3_text.right
+            anchors.left: status_dropdown.right
             anchors.top: player_dropdown.top
             anchors.leftMargin: 6
 
             textRole: "label"
             valueRole: "key"
 
-            model: []   // starts empty
+            model: [
+                { key: "white",        label: "Mrs. White" },
+                { key: "red",          label: "Miss Scarlet" },
+                { key: "green",        label: "Mr. Green" },
+                { key: "yellow",       label: "Colonel Mustard" },
+                { key: "blue",         label: "Mrs. Peacock" },
+                { key: "purple",       label: "Mr. Plum" },
+                { key: "knife",        label: "Knife" },
+                { key: "candlestick",  label: "Candlestick" },
+                { key: "revolver",     label: "Revolver" },
+                { key: "rope",         label: "Rope" },
+                { key: "leadpipe",     label: "Lead Pipe" },
+                { key: "wrench",       label: "Wrench" },
+                { key: "hall",         label: "Hall"},
+                { key: "lounge",       label: "Lounge"},
+                { key: "dining",       label: "Dining Room"},
+                { key: "kitchen",      label: "Kitchen"},
+                { key: "ballroom",     label: "Ballroom"},
+                { key: "conservatory", label: "Conservatory"},
+                { key: "Billiard",     label: "Billiard"},
+                { key: "library",      label: "Library"},
+                { key: "study",        label: "Study"},
+            ]
 
             onActivated: {
                 backend.setSelectedMenu(currentValue)
+            }
+        }
+
+        Button {
+            id: enter_button
+            text: "Enter"
+            height: 25
+            width: 75
+            anchors.left: has_results_dropdown.right
+            anchors.verticalCenter: player_dropdown.verticalCenter
+            anchors.leftMargin: 6
+ 
+
+            contentItem: Text {
+                text: parent.text
+                color: "white"
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                font.pixelSize: 15
+            }
+
+            background: Rectangle {
+                radius: 6
+                color: '#2a2a2a'
+                border.color: '#04a139'
+                border.width: 2
             }
         }
     }
