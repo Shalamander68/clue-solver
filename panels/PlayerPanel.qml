@@ -6,28 +6,16 @@ Rectangle {
     id: playerPanel
     color: '#141414'
             
-    Rectangle {
-        id: topbar_players
-        width: parent.width
-        height: 52
-        color: "#292929"
-
-        Rectangle {
-            id: topbar_border_players
-            width: parent.width
-            height: 2
-            anchors.bottom: parent.bottom
-            color: "#9e9e9e"
-        }
-        Text {
-            id: topbar_text_players
-            text: "Players"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
-            color: "#FFFFFF"
-            font.pixelSize: 20
-        }
+   Text {
+        id: topbar_text_players
+        text: "Players"
+        anchors.top: parent.top
+        anchors.horizontalCenter: player_actions.horizontalCenter
+        anchors.topMargin: 12
+        color: "#FFFFFF"
+        font.pixelSize: 20
     }
+
     Rectangle {
         id: seccond_separator
         width: 2
@@ -36,10 +24,71 @@ Rectangle {
         anchors.top: topbar_players.top
         color: "#9e9e9e"
     }
+
+    Button {
+        id: submit_button
+        text: "Submit"
+        height: 65
+
+        anchors.left: player_actions.right
+        anchors.right: parent.right
+        anchors.top: player_actions.top
+
+        anchors.topMargin: 10
+        anchors.rightMargin: 40
+        anchors.leftMargin: 40
+        anchors.bottomMargin: 25
+
+        contentItem: Text {
+            text: parent.text
+            color: "white"
+            anchors.fill: parent
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 25
+        }
+
+        background: Rectangle {
+            radius: 6
+            color: '#004422'
+            border.color: "white"
+            border.width: 2
+        }
+    }
+    Button {
+        id: undo_button
+        text: "Undo"
+
+        anchors.left: player_actions.right
+        anchors.right: parent.right
+        anchors.top: submit_button.bottom
+        anchors.bottom: player_actions.bottom
+
+        anchors.topMargin: 10
+        anchors.rightMargin: 40
+        anchors.leftMargin: 40
+        anchors.bottomMargin: 10
+
+        contentItem: Text {
+            text: parent.text
+            color: "white"
+            anchors.fill: parent
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 25
+        }
+
+        background: Rectangle {
+            radius: 6
+            color: '#36413b'
+            border.color: "white"
+            border.width: 2
+        }
+    }
 //player actions
     Row {
         id: player_actions
-        anchors.top: topbar_players.bottom
+        anchors.top: topbar_text_players.bottom
         anchors.left: parent.left
         anchors.leftMargin: 12
         anchors.topMargin: 12
