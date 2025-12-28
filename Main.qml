@@ -3,32 +3,31 @@ import "panels"
 
 Window {
     id: main_window
-    width: 640
+    width: 1600
     height: 480
     visible: true
     title: qsTr("Clue Solver")
-  
+    
 // 3 panel layout
-    Row {
-        id: rows
+    Flow {
+        id: layout
         anchors.fill: parent
+        spacing: 0
+        flow: Flow.LeftToRight
 
         InputPanel {
-            width: parent.width * 0.4
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
+            width: 700
+            height: parent.height
         }
 
         PlayerPanel {
-            width: parent.width * 0.3
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
+            width: (parent.width - 700) * 0.5
+            height: parent.height
         }
 
         OutputPanel {
-            width: parent.width * 0.3
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
+            width: (parent.width - 700) * 0.5
+            height: parent.height
         }
     }
 }
