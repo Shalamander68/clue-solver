@@ -42,7 +42,7 @@ import QtQuick.Controls
         anchors.top: topbar_input.bottom
         anchors.horizontalCenter: suspects.horizontalCenter
         color: '#e7e7e7'
-        font.pixelSize: 15
+        font.pixelSize: 20
         anchors.margins: 12
     }
 
@@ -105,7 +105,7 @@ import QtQuick.Controls
         anchors.top: topbar_input.bottom
         anchors.horizontalCenter: weapon.horizontalCenter
         color: '#e7e7e7'
-        font.pixelSize: 15
+        font.pixelSize: 20
         anchors.margins: 12
     }
 
@@ -168,7 +168,7 @@ import QtQuick.Controls
         anchors.top: topbar_input.bottom
         anchors.horizontalCenter: room.horizontalCenter
         color: '#e7e7e7'
-        font.pixelSize: 15
+        font.pixelSize: 20
         anchors.margins: 12
     }
     Grid {

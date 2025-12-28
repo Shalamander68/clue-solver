@@ -59,9 +59,28 @@ Rectangle {
                 // Track which button is currently selected for this player
                 property string selected: ""
 
+                Rectangle {
+                    radius: 6
+                    width: 80
+                    height: 42
+                    color: "#2a2a2a"
+                    border.color: modelData.highlight
+                    border.width: 2
+
+                    Text {
+                        id: player_text
+                        text: modelData.label
+                        font.pixelSize: 20
+                        anchors.fill: parent
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        color: 'white'
+                    }
+                }
+
                 Button {
                     id: hasButton
-                    text: "has"
+                    text: "Have"
                     checkable: true
                     width: 80
                     height: 42
@@ -100,7 +119,7 @@ Rectangle {
 
                 Button {
                     id: noneButton
-                    text: "none"
+                    text: "None"
                     checkable: true
                     width: 80
                     height: 42
