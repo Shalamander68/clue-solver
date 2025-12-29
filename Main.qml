@@ -9,17 +9,6 @@ Window {
     visibility: Window.Maximized
     title: qsTr("Clue Solver")
 
-    Component.onCompleted: {
-        if (Qt.application.screens.length > 1) {
-            // Move window to monitor 2 (index 1)
-            var screen2 = Qt.application.screens[1]
-            main_window.x = screen2.x
-            main_window.y = screen2.y
-            main_window.width = screen2.width
-            main_window.height = screen2.height
-        }
-    }
-
 // 3 panel layout
     Flow {
         id: layout
