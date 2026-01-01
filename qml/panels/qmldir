@@ -1,0 +1,4 @@
+module Pannels
+InputPanel 1.0 InputPanel.qml
+OutputPanel 1.0 OutputPanel.qml
+PlayerPanel 1.0 OutputPanel.qml

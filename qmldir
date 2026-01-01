@@ -1,0 +1,6 @@
+module clue-solver
+Main 1.0 qml/Main.qml
+Main 1.0 build/clue_solver_creator/Main.qml
+InputPanel 1.0 qml/panels/InputPanel.qml
+OutputPanel 1.0 qml/panels/OutputPanel.qml
+PlayerPanel 1.0 qml/panels/PlayerPanel.qml
