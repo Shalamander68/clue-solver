@@ -1,6 +1,8 @@
 #pragma once
 
 #include <QObject>
+#include <QVector>
+#include <QString>
 
 class Backend : public QObject
 {
@@ -15,6 +17,9 @@ public:
     void setStatus(const QString &value);
 
     Q_INVOKABLE void doSomething();
+    Q_INVOKABLE void direct_input();
+    Q_INVOKABLE void implied_input();
+    Q_INVOKABLE void recalculate();
 
 signals:
     void statusChanged();

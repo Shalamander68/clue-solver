@@ -25,3 +25,16 @@ void Backend::doSomething()
     qDebug() << "Called from QML!";
     setStatus("Button pressed");
 }
+
+void Backend::direct_input()
+{
+    qDebug() << "Called from QML!";
+}
+void Backend::implied_input()
+{
+    qDebug() << "Called from QML!";
+}
+void Backend::recalculate()
+{
+    qDebug() << "Called from QML!";
+}
